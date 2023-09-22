@@ -20,19 +20,19 @@ export const PhotoSearchSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(searchPhotos.pending, () => {
-        // executed when your promise is pending
-      })
-      .addCase(searchPhotos.fulfilled, (state, action) => {
-        // executed when your promise is fulfilled
-        state.pics = action.payload;
-        if (state.pics.length === 0){
-          toast.error('No Images Found!', { autoClose: 3000 })
-        }
-      })
-      .addCase(searchPhotos.rejected, () => {
-        // executed when your promise is rejected
-      });
+    .addCase(searchPhotos.pending, () => {
+      // executed when your promise is pending
+    })
+    .addCase(searchPhotos.fulfilled, (state, action) => {
+      // executed when your promise is fulfilled
+      state.pics = action.payload;
+      if (state.pics.length === 0){
+        toast.error('No Images Found!', { autoClose: 3000 })
+      }
+    })
+    .addCase(searchPhotos.rejected, () => {
+      // executed when your promise is rejected
+    });
   },
 })
 
